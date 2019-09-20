@@ -2,6 +2,7 @@ package com.turing.qrcode.controller;
 
 import com.turing.qrcode.bean.Student;
 import com.turing.qrcode.controller.service.StudentService;
+import com.turing.qrcode.controller.service.TableService;
 import com.turing.qrcode.message.Message;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -9,9 +10,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -28,6 +27,8 @@ public class StudentController {
 
     @Autowired
     private StudentService studentService;
+    @Autowired
+    private TableService tableService;
 
     @PostMapping("/login")
     @ApiOperation(value = "登录坐下桌子开始学习",notes = "根据学生姓名登录，密码默认为123456.姓名非空，密码6-16位.登录成功会返回该学生信息.",httpMethod = "POST")
