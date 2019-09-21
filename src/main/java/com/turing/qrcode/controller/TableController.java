@@ -5,6 +5,7 @@ import com.turing.qrcode.message.Message;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2019/9/20
  */
 @RestController
+@CrossOrigin(origins = "*",maxAge = 3600)
 public class TableController {
     @Autowired
     private TableService tableService;

@@ -12,7 +12,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
@@ -23,12 +22,11 @@ import java.util.Map;
  * @date 2019/9/18
  */
 @RestController
+@CrossOrigin(origins = "*",maxAge = 3600)
 public class StudentController {
 
     @Autowired
     private StudentService studentService;
-    @Autowired
-    private TableService tableService;
 
     @PostMapping("/login")
     @ApiOperation(value = "登录坐下桌子开始学习",notes = "根据学生姓名登录，密码默认为123456.姓名非空，密码6-16位.登录成功会返回该学生信息.",httpMethod = "POST")

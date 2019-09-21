@@ -5,12 +5,14 @@ import com.turing.qrcode.controller.service.TableService;
 import com.turing.qrcode.dao.TableMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author Meng
  * @date 2019/9/20
  */
 @Service
+@Transactional
 public class TableServiceImpl implements TableService {
     @Autowired
     private TableMapper tableMapper;
