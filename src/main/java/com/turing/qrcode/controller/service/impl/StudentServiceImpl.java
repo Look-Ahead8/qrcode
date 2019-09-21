@@ -85,21 +85,16 @@ public class StudentServiceImpl implements StudentService {
      * 4签退的桌子被其他人坐下了但不是自己（一般不会出现这种情况）
      */
     @Override
-    public int loginout(Integer tableId, Integer studentId) {
-        Student student = selectByStudentId(studentId);
+    public int loginout(Integer tableId) {
         Table table = selectBytableId(tableId);
         if (table == null) {
             return 1;
         }
-        if (student == null) {
-            return 2;
-        }
         if (!table.getState()) {
             return 3;
         }
-        if (isOtherSit(studentId, table)) {
-            return 4;
-        }
+        Integer studentId=timeMapper.selectByTableIdOrder(tableId).getStudetId();
+        Student student = selectByStudentId(studentId);
         Time time = new Time();
         time.setTableId(tableId);
         time.setState(1);

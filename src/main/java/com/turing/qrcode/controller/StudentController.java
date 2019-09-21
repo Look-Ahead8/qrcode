@@ -71,28 +71,27 @@ public class StudentController {
     @PostMapping("/loginout")
     @ApiOperation(value = "退出桌子",notes = "在该学生已在该桌子学习的情况下，退出该桌子，并获得学习时长",httpMethod = "POST")
     @ApiImplicitParams({
-            @ApiImplicitParam(name="studentId",value = "学生id",dataType = "int",paramType = "query",required = true),
             @ApiImplicitParam(name="tableId",value = "桌子id",dataType = "int",paramType = "query",required = true)
     })
-    public Message loginout(@RequestParam("tableId") Integer tableId,@RequestParam("studentId") Integer studentId){
+    public Message loginout(@RequestParam("tableId") Integer tableId){
         Map<String,String> map=new HashMap();
-        int result=studentService.loginout(tableId,studentId);
+        int result=studentService.loginout(tableId);
         if (result == 1) {
             map.put("message","请输入正确的桌子号码");
             return Message.fail().add("errors",map);
         }
-        else if (result == 2) {
-            map.put("message","请输入正确的学生号码");
-            return Message.fail().add("errors",map);
-        }
+//        else if (result == 2) {
+//            map.put("message","请输入正确的学生号码");
+//            return Message.fail().add("errors",map);
+//        }
         else if (result == 3) {
             map.put("message","该桌子还没有人坐下，请先签到");
             return Message.fail().add("errors",map);
         }
-        else if (result == 4) {
-            map.put("message","该桌子已经有别人坐下了,请换一张桌子签到");
-            return Message.fail().add("errors",map);
-        }
+//        else if (result == 4) {
+//            map.put("message","该桌子已经有别人坐下了,请换一张桌子签到");
+//            return Message.fail().add("errors",map);
+//        }
         return Message.success();
     }
 

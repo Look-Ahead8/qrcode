@@ -9,7 +9,7 @@ import com.turing.qrcode.bean.Student;
 public interface StudentService {
     int login(Student student,int tableId);
 
-    int loginout(Integer tableId,Integer studentId);
+    int loginout(Integer tableId);
 
     Student selectByStudentName(String studentName);
 }
