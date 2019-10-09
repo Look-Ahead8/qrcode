@@ -151,9 +151,11 @@ public class QRCodeUtil {
     }
 
     public static void main(String[] args) throws Exception {
-        String text="http://www.baidu.com";
         String logoPath="C:\\Users\\Lenovo\\Desktop\\a.png";
-        String destPath = "D:\\a";
-        QRCodeUtil.encode(text, logoPath, destPath, true);
+        for (int i = 1; i <=10 ; i++) {
+            String text="http://120.79.229.14/#/"+i;
+            String destPath = "D:\\"+i+".jpg";
+            QRCodeUtil.encode(text, logoPath, destPath, true);
+        }
     }
 }
