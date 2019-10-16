@@ -211,4 +211,7 @@
   <select id="selectByTableIdOrder" parameterType="java.lang.Integer" resultType="com.turing.qrcode.bean.Time">
     SELECT * FROM `time` WHERE table_id =#{tableId} AND state=0 ORDER BY DATETIME DESC LIMIT 1
   </select>
+  <select id="selectTimes" resultType="com.turing.qrcode.bean.Time">
+     SELECT * FROM `time` ORDER BY studet_id,`datetime` DESC
+  </select>
 </mapper>

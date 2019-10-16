@@ -4,6 +4,7 @@ import com.turing.qrcode.bean.Student;
 import com.turing.qrcode.controller.service.StudentService;
 import com.turing.qrcode.controller.service.TableService;
 import com.turing.qrcode.message.Message;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -12,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +25,7 @@ import java.util.Map;
  */
 @RestController
 @CrossOrigin(origins = "*",maxAge = 3600)
+@Api(tags="学生接口")
 public class StudentController {
 
     @Autowired
@@ -34,11 +37,8 @@ public class StudentController {
             @ApiImplicitParam(name="studentName",value = "学生姓名",dataType = "string",paramType = "query",required = true),
             @ApiImplicitParam(name="studentPassword",value = "学生密码",dataType = "string",paramType = "query",required = true),
             @ApiImplicitParam(name="tableId",value = "桌子id",dataType = "int",paramType = "query",required = true),
-            @ApiImplicitParam(name="studentId",value = "学生id(不用)",dataType = "int",paramType = "query",readOnly = true),
-            @ApiImplicitParam(name="studentNo",value = "学生学号(不用)",dataType = "string",paramType = "query",readOnly = true),
-            @ApiImplicitParam(name="studentTime",value = "学生总学习时间(不用)/秒",dataType = "int",paramType = "query",readOnly = true)
     })
-    private Message login(@Valid Student student, BindingResult result, @RequestParam("tableId") Integer tableId) {
+    private Message login(@Valid Student student, BindingResult result, @RequestParam("tableId") Integer tableId, HttpServletRequest request) {
         Map<String, String> map = new HashMap<>();
         if (result.hasErrors()) {
             List<FieldError> fieldErrors = result.getFieldErrors();
@@ -65,6 +65,7 @@ public class StudentController {
             return Message.fail().add("errors",map);
         }
         Student loginStudent=studentService.selectByStudentName(student.getStudentName());
+        request.getSession().setAttribute("student",loginStudent);
         return Message.success().add("student",loginStudent);
     }
 

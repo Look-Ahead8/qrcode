@@ -1,19 +1,23 @@
 package com.turing.qrcode.bean;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.swagger.annotations.ApiModelProperty;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 
 public class Student {
+    @ApiModelProperty(hidden = true)
     private Integer studentId;
 
     @NotBlank(message = "姓名不可以为空")
     private String studentName;
 
+    @ApiModelProperty(hidden = true)
     private String studentNo;
 
+    @ApiModelProperty(hidden = true)
     private Integer studentTime;
 
     @JsonIgnore

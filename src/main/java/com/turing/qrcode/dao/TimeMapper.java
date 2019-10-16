@@ -2,7 +2,9 @@ package com.turing.qrcode.dao;
 
 import com.turing.qrcode.bean.Time;
 import com.turing.qrcode.bean.TimeExample;
+
 import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface TimeMapper {
@@ -33,4 +35,6 @@ public interface TimeMapper {
     List<Time> selectByStudentId(Integer studentId);
 
     Time selectByTableIdOrder(Integer tableId);
+
+    List<Time> selectTimes();
 }

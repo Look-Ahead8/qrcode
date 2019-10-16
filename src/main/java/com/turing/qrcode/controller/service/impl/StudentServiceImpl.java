@@ -145,6 +145,14 @@ public class StudentServiceImpl implements StudentService {
         return students.isEmpty() ? null : students.get(0);
     }
 
+    @Override
+    public List<Student> getAllStudentOrderByTime() {
+        StudentExample studentExample=new StudentExample();
+        StudentExample.Criteria criteria=studentExample.createCriteria();
+        studentExample.setOrderByClause("student_time DESC");
+        return studentMapper.selectByExample(studentExample);
+    }
+
     public Student selectByStudentId(Integer studentId) {
         return studentMapper.selectByPrimaryKey(studentId);
     }

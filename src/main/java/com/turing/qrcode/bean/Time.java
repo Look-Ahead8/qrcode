@@ -1,14 +1,19 @@
 package com.turing.qrcode.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 
 public class Time {
+    @JsonIgnore
     private Integer timeId;
 
     private Integer studetId;
 
     private Integer state;
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT-5")
     private Date datetime;
 
     private Integer tableId;
