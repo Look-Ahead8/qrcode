@@ -10,4 +10,6 @@ import java.util.List;
  */
 public interface TimeService {
     List<Time> selectTimes();
+
+    List<Time> selectTimeBystudentId(Integer studentId);
 }

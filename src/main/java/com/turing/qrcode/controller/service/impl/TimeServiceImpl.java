@@ -24,4 +24,9 @@ public class TimeServiceImpl implements TimeService {
     public List<Time> selectTimes() {
         return timeMapper.selectTimes();
     }
+
+    @Override
+    public List<Time> selectTimeBystudentId(Integer studentId) {
+        return timeMapper.selectByStudentId(studentId);
+    }
 }

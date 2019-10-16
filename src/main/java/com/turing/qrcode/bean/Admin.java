@@ -2,15 +2,20 @@ package com.turing.qrcode.bean;
 
 import io.swagger.annotations.ApiModelProperty;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 public class Admin {
     @ApiModelProperty(hidden = true)
     private Integer adminId;
 
+    @NotBlank(message = "用户名不可以为空")
     private String adminName;
 
     @ApiModelProperty(hidden = true)
     private String adminStudentNo;
 
+    @Size(max = 16, min = 6, message = "请输入6-16位正确的密码")
     private String adminPassword;
 
     public Integer getAdminId() {

@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Controller()
 @RequestMapping("/admin")
-@Api(tags = "学生后台管理接口")
+@Api(tags = "后台管理学生后台管理接口")
 public class StudentAdminController {
     @Autowired
     private StudentService studentService;

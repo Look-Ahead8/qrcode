@@ -45,8 +45,8 @@
         <!--        <table tableName="table" schema="root" domainObjectName="Table">-->
         <!--            <generatedKey column="table_id" sqlStatement="JDBC"/>-->
         <!--        </table>-->
-        <table tableName="admin" domainObjectName="Admin">
-            <generatedKey column="admin_id" sqlStatement="JDBC"/>
-        </table>
+<!--        <table tableName="admin" domainObjectName="Admin">-->
+<!--            <generatedKey column="admin_id" sqlStatement="JDBC"/>-->
+<!--        </table>-->
     </context>
 </generatorConfiguration>
