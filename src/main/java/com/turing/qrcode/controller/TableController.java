@@ -3,7 +3,6 @@ package com.turing.qrcode.controller;
 import com.turing.qrcode.bean.Table;
 import com.turing.qrcode.controller.service.TableService;
 import com.turing.qrcode.message.Message;
-import com.turing.qrcode.util.IpUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -40,7 +39,6 @@ public class TableController {
     @ApiOperation(value = "返回全部桌子的情况",notes="state为false为还没人坐下，否则为已经有人坐下",httpMethod = "GET")
     @GetMapping("/table")
     public Message getAllTable(HttpServletRequest request) {
-        String ip= IpUtil.getIpAddr(request);
         List<Table> tables = tableService.getAllTable();
         return Message.success().add("tables", tables);
     }

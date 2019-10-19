@@ -16,4 +16,6 @@ public interface StudentService {
     Student selectByStudentName(String studentName);
 
     List<Student> getAllStudentOrderByTime();
+
+    void autoLoginOut(String[] macs);
 }

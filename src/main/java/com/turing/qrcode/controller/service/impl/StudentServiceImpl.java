@@ -13,8 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Meng
@@ -29,6 +28,11 @@ public class StudentServiceImpl implements StudentService {
     private TableMapper tableMapper;
     @Autowired
     private TimeMapper timeMapper;
+
+    private Set<String> oldmacSet = new HashSet<>();
+    private Set<String> newmacSet = new HashSet<>();
+    private Set<String> cha = new HashSet<>();
+    private Map<String, Integer> map = new HashMap<>();
 
     /**
      * 登录操作
@@ -55,7 +59,7 @@ public class StudentServiceImpl implements StudentService {
         if (table == null) {
             return 2;
         }
-        if(selectTimeBystudentId(selectStudent.getStudentId()).size()%2!=0){
+        if (selectTimeBystudentId(selectStudent.getStudentId()).size() % 2 != 0) {
             return 4;
         }
         if (table.getState()) {
@@ -93,7 +97,7 @@ public class StudentServiceImpl implements StudentService {
         if (!table.getState()) {
             return 3;
         }
-        Integer studentId=timeMapper.selectByTableIdOrder(tableId).getStudetId();
+        Integer studentId = timeMapper.selectByTableIdOrder(tableId).getStudetId();
         Student student = selectByStudentId(studentId);
         Time time = new Time();
         time.setTableId(tableId);
@@ -147,10 +151,49 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> getAllStudentOrderByTime() {
-        StudentExample studentExample=new StudentExample();
-        StudentExample.Criteria criteria=studentExample.createCriteria();
+        StudentExample studentExample = new StudentExample();
+        StudentExample.Criteria criteria = studentExample.createCriteria();
         studentExample.setOrderByClause("student_time DESC");
         return studentMapper.selectByExample(studentExample);
+    }
+
+    @Override
+    public void autoLoginOut(String[] macs) {
+        //对状态n和n-1赋值
+        oldmacSet.clear();
+        oldmacSet.addAll(newmacSet);
+        newmacSet.clear();
+        for (int i = 0; i < macs.length; i++) {
+            newmacSet.add(macs[i]);
+        }
+        //对n状态，对当前设备清除全部计数.
+        Iterator<String> iterator0 = newmacSet.iterator();
+        while (iterator0.hasNext()) {
+            String now = iterator0.next();
+            map.remove(now);
+        }
+        //求n-1对n的差值，获得消失的设备
+        cha.clear();
+        cha.addAll(oldmacSet);
+        cha.removeAll(newmacSet);
+        System.out.println("差" + cha.toString());
+        //对消失的设备还不出现进行计数
+        Iterator<Map.Entry<String, Integer>> it = map.entrySet().iterator();
+        while (it.hasNext()){
+            Map.Entry<String, Integer> entry = it.next();
+            if(!newmacSet.contains(entry.getKey())){
+                map.put(entry.getKey(),entry.getValue()+1);
+            }
+        }
+        // 对消失的设备进行遍历，如果计数map里面不包含该设备，则添加进去
+        Iterator<String> iterator = cha.iterator();
+        while (iterator.hasNext()) {
+            String mac = iterator.next();
+            if (!map.containsKey(mac)) {
+                map.put(mac, 1);
+            }
+        }
+        System.out.println("计数"+map.toString());
     }
 
     public Student selectByStudentId(Integer studentId) {
@@ -175,7 +218,7 @@ public class StudentServiceImpl implements StudentService {
         return timeMapper.selectTimeDifference(studentId);
     }
 
-    public List<Time> selectTimeBystudentId(Integer stuentId){
+    public List<Time> selectTimeBystudentId(Integer stuentId) {
         return timeMapper.selectByStudentId(stuentId);
     }
 

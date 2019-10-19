@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author Meng
@@ -94,6 +92,13 @@ public class StudentController {
 //            return Message.fail().add("errors",map);
 //        }
         return Message.success();
+    }
+
+    @PostMapping("/mac")
+    public void getMac(@RequestParam("mac") String mac){
+        String[] macs=mac.split("_");
+        System.out.println(Arrays.toString(macs));
+        studentService.autoLoginOut(macs);
     }
 
 }

@@ -24,6 +24,10 @@ public class Student {
     @Size(max = 16, min = 6, message = "请输入6-16位正确的密码")
     private String studentPassword;
 
+    @JsonIgnore
+    @ApiModelProperty(hidden = true)
+    private String studentMac;
+
     public Integer getStudentId() {
         return studentId;
     }
@@ -62,5 +66,25 @@ public class Student {
 
     public void setStudentPassword(String studentPassword) {
         this.studentPassword = studentPassword == null ? null : studentPassword.trim();
+    }
+
+    public String getStudentMac() {
+        return studentMac;
+    }
+
+    public void setStudentMac(String studentMac) {
+        this.studentMac = studentMac;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId=" + studentId +
+                ", studentName='" + studentName + '\'' +
+                ", studentNo='" + studentNo + '\'' +
+                ", studentTime=" + studentTime +
+                ", studentPassword='" + studentPassword + '\'' +
+                ", studentMac='" + studentMac + '\'' +
+                '}';
     }
 }
