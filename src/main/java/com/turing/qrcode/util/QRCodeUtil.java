@@ -152,7 +152,7 @@ public class QRCodeUtil {
 
     public static void main(String[] args) throws Exception {
         String logoPath="C:\\Users\\Lenovo\\Desktop\\a.png";
-        for (int i = 1; i <=10 ; i++) {
+        for (int i = 1; i <=30 ; i++) {
             String text="http://120.79.229.14/#/"+i;
             String destPath = "D:\\"+i+".jpg";
             QRCodeUtil.encode(text, logoPath, destPath, true);

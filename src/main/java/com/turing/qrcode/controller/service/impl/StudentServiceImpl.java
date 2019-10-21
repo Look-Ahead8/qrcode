@@ -33,6 +33,7 @@ public class StudentServiceImpl implements StudentService {
     private Set<String> newmacSet = new HashSet<>();
     private Set<String> cha = new HashSet<>();
     private Map<String, Integer> map = new HashMap<>();
+    private final int THRESHOLD_VALUE = 20;
 
     /**
      * 登录操作
@@ -119,7 +120,7 @@ public class StudentServiceImpl implements StudentService {
      *
      * @param studentId
      * @param table
-     * @return是返回true，否则返回false
+     * @return 是返回true，否则返回false
      */
     private boolean isOtherSit(Integer studentId, Table table) {
         if (table.getState() && timeMapper.selectByTableIdOrder(table.getTableId()).getStudetId() != studentId) {
@@ -128,7 +129,12 @@ public class StudentServiceImpl implements StudentService {
         return false;
     }
 
-
+    /**
+     * 获取这次签到签退的学习时长
+     *
+     * @param times
+     * @return 时长，单位为秒
+     */
     private long getTotalTime(List<Time> times) {
         Date lastTime = times.get(0).getDatetime();
         Date firstTime = times.get(1).getDatetime();
@@ -149,7 +155,11 @@ public class StudentServiceImpl implements StudentService {
         return students.isEmpty() ? null : students.get(0);
     }
 
-    @Override
+    /**
+     * 获取全部学生，按时间降序排序
+     *
+     * @return
+     */
     public List<Student> getAllStudentOrderByTime() {
         StudentExample studentExample = new StudentExample();
         StudentExample.Criteria criteria = studentExample.createCriteria();
@@ -179,10 +189,22 @@ public class StudentServiceImpl implements StudentService {
         System.out.println("差" + cha.toString());
         //对消失的设备还不出现进行计数
         Iterator<Map.Entry<String, Integer>> it = map.entrySet().iterator();
-        while (it.hasNext()){
+        while (it.hasNext()) {
             Map.Entry<String, Integer> entry = it.next();
-            if(!newmacSet.contains(entry.getKey())){
-                map.put(entry.getKey(),entry.getValue()+1);
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            if (value == THRESHOLD_VALUE) {
+                Student student = selectStudentByMac(key);
+                if (student != null && selectTimeBystudentId(student.getStudentId()).size() % 2 != 0) {
+                    Integer tableId = timeMapper.selectStudentSitTableId(student.getStudentId());
+                    System.out.println(tableId);
+                    loginout(tableId);
+                }
+                it.remove();
+            } else {
+                if (!newmacSet.contains(key)) {
+                    map.put(key, value + 1);
+                }
             }
         }
         // 对消失的设备进行遍历，如果计数map里面不包含该设备，则添加进去
@@ -193,7 +215,7 @@ public class StudentServiceImpl implements StudentService {
                 map.put(mac, 1);
             }
         }
-        System.out.println("计数"+map.toString());
+        System.out.println("计数" + map.toString());
     }
 
     public Student selectByStudentId(Integer studentId) {
@@ -218,8 +240,28 @@ public class StudentServiceImpl implements StudentService {
         return timeMapper.selectTimeDifference(studentId);
     }
 
+    /**
+     * 根据学生id查找全部签到签退记录
+     *
+     * @param stuentId
+     * @return 签到签退记录
+     */
     public List<Time> selectTimeBystudentId(Integer stuentId) {
         return timeMapper.selectByStudentId(stuentId);
+    }
+
+    /**
+     * 根据mac地址查找学生
+     *
+     * @param mac
+     * @return 找不到返回null，否则返回该学生
+     */
+    public Student selectStudentByMac(String mac) {
+        StudentExample studentExample = new StudentExample();
+        StudentExample.Criteria criteria = studentExample.createCriteria();
+        criteria.andStudentMacEqualTo(mac);
+        List<Student> students = studentMapper.selectByExample(studentExample);
+        return students.isEmpty() ? null : students.get(0);
     }
 
 }

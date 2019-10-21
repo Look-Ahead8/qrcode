@@ -433,6 +433,76 @@ public class StudentExample {
             addCriterion("student_password not between", value1, value2, "studentPassword");
             return (Criteria) this;
         }
+
+        public Criteria andStudentMacIsNull() {
+            addCriterion("student_mac is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStudentMacIsNotNull() {
+            addCriterion("student_mac is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStudentMacEqualTo(String value) {
+            addCriterion("student_mac =", value, "studentMac");
+            return (Criteria) this;
+        }
+
+        public Criteria andStudentMacNotEqualTo(String value) {
+            addCriterion("student_mac <>", value, "studentMac");
+            return (Criteria) this;
+        }
+
+        public Criteria andStudentMacGreaterThan(String value) {
+            addCriterion("student_mac >", value, "studentMac");
+            return (Criteria) this;
+        }
+
+        public Criteria andStudentMacGreaterThanOrEqualTo(String value) {
+            addCriterion("student_mac >=", value, "studentMac");
+            return (Criteria) this;
+        }
+
+        public Criteria andStudentMacLessThan(String value) {
+            addCriterion("student_mac <", value, "studentMac");
+            return (Criteria) this;
+        }
+
+        public Criteria andStudentMacLessThanOrEqualTo(String value) {
+            addCriterion("student_mac <=", value, "studentMac");
+            return (Criteria) this;
+        }
+
+        public Criteria andStudentMacLike(String value) {
+            addCriterion("student_mac like", value, "studentMac");
+            return (Criteria) this;
+        }
+
+        public Criteria andStudentMacNotLike(String value) {
+            addCriterion("student_mac not like", value, "studentMac");
+            return (Criteria) this;
+        }
+
+        public Criteria andStudentMacIn(List<String> values) {
+            addCriterion("student_mac in", values, "studentMac");
+            return (Criteria) this;
+        }
+
+        public Criteria andStudentMacNotIn(List<String> values) {
+            addCriterion("student_mac not in", values, "studentMac");
+            return (Criteria) this;
+        }
+
+        public Criteria andStudentMacBetween(String value1, String value2) {
+            addCriterion("student_mac between", value1, value2, "studentMac");
+            return (Criteria) this;
+        }
+
+        public Criteria andStudentMacNotBetween(String value1, String value2) {
+            addCriterion("student_mac not between", value1, value2, "studentMac");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

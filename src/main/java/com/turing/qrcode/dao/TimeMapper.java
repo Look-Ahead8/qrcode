@@ -37,4 +37,6 @@ public interface TimeMapper {
     Time selectByTableIdOrder(Integer tableId);
 
     List<Time> selectTimes();
+
+    Integer selectStudentSitTableId(Integer studentId);
 }
