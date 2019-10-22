@@ -1,5 +1,6 @@
 package com.turing.qrcode.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.validation.constraints.NotBlank;
@@ -16,6 +17,7 @@ public class Admin {
     private String adminStudentNo;
 
     @Size(max = 16, min = 6, message = "请输入6-16位正确的密码")
+    @JsonIgnore
     private String adminPassword;
 
     public Integer getAdminId() {

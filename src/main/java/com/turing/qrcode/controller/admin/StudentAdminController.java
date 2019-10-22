@@ -15,7 +15,8 @@ import java.util.List;
  * @author Meng
  * @date 2019/10/11
  */
-@Controller()
+@Controller
+@CrossOrigin(origins = "*",maxAge = 3600)
 @RequestMapping("/admin")
 @Api(tags = "后台管理学生后台管理接口")
 public class StudentAdminController {
