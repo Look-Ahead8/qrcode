@@ -36,9 +36,9 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-                <table tableName="student" schema="root" domainObjectName="Student">
-                    <generatedKey column="student_id" sqlStatement="JDBC"/>
-                </table>
+<!--                <table tableName="student" schema="root" domainObjectName="Student">-->
+<!--                    <generatedKey column="student_id" sqlStatement="JDBC"/>-->
+<!--                </table>-->
         <!--        <table tableName="time" schema="root" domainObjectName="Time">-->
         <!--            <generatedKey column="time_id" sqlStatement="JDBC"/>-->
         <!--        </table>-->

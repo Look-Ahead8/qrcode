@@ -1,0 +1,21 @@
+11:04:21.961 logging [main] INFO  com.turing.qrcode.QrcodeApplication - Starting QrcodeApplication on DESKTOP-IHRFVL0 with PID 17432 (D:\Chrome\ChromeDownloads\VBlog-master\qcdode\target\classes started by Lenovo in D:\Chrome\ChromeDownloads\VBlog-master\qcdode)
+11:04:21.963 logging [main] INFO  com.turing.qrcode.QrcodeApplication - No active profile set, falling back to default profiles: default
+11:04:22.058 logging [background-preinit] WARN  o.s.h.c.j.Jackson2ObjectMapperBuilder - For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+11:04:23.006 logging [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$dc40e96f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+11:04:23.236 logging [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8888 (http)
+11:04:23.249 logging [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8888"]
+11:04:23.257 logging [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+11:04:23.257 logging [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.24]
+11:04:23.341 logging [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+11:04:23.341 logging [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1326 ms
+11:04:23.470 logging [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+11:04:23.589 logging [main] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+11:04:24.118 logging [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+11:04:24.223 logging [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+11:04:24.337 logging [main] INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+11:04:24.377 logging [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+11:04:24.389 logging [main] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+11:04:24.419 logging [main] INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+11:04:24.567 logging [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8888"]
+11:04:24.587 logging [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8888 (http) with context path ''
+11:04:24.590 logging [main] INFO  com.turing.qrcode.QrcodeApplication - Started QrcodeApplication in 3.16 seconds (JVM running for 3.947)

@@ -9,6 +9,8 @@ import com.turing.qrcode.dao.StudentMapper;
 import com.turing.qrcode.dao.TableMapper;
 import com.turing.qrcode.dao.TimeMapper;
 import com.turing.qrcode.util.MD5Util;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +24,7 @@ import java.util.*;
 @Service
 @Transactional
 public class StudentServiceImpl implements StudentService {
+    private Logger logger = LoggerFactory.getLogger(getClass());
     @Autowired
     private StudentMapper studentMapper;
     @Autowired
@@ -74,6 +77,7 @@ public class StudentServiceImpl implements StudentService {
         time.setTableId(tableId);
         time.setStudetId(selectStudent.getStudentId());
         timeMapper.insertSelective(time);
+        logger.info(student.getStudentName()+"在"+tableId+"号桌子坐下");
         return 0;
     }
 
@@ -112,6 +116,7 @@ public class StudentServiceImpl implements StudentService {
         studentMapper.updateByPrimaryKeySelective(student);
         table.setState(false);
         tableMapper.updateByPrimaryKeySelective(table);
+        logger.info(student.getStudentName()+"在"+tableId+"号桌子退出");
         return 0;
     }
 
@@ -197,7 +202,7 @@ public class StudentServiceImpl implements StudentService {
                 Student student = selectStudentByMac(key);
                 if (student != null && selectTimeBystudentId(student.getStudentId()).size() % 2 != 0) {
                     Integer tableId = timeMapper.selectStudentSitTableId(student.getStudentId());
-                    System.out.println(tableId);
+                    logger.info("学生姓名为"+student.getStudentName()+"的学生在"+tableId+"号桌子自动退出");
                     loginout(tableId);
                 }
                 it.remove();

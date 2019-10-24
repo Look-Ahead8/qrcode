@@ -1,0 +1,78 @@
+2019/10/24-11:04:35 [main] INFO  com.turing.qrcode.QrcodeApplication- $msg
+2019/10/24-11:04:35 [main] INFO  com.turing.qrcode.QrcodeApplication- $msg
+2019/10/24-11:04:35 [background-preinit] WARN  org.springframework.http.converter.json.Jackson2ObjectMapperBuilder- $msg
+2019/10/24-11:04:36 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- $msg
+2019/10/24-11:04:36 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- $msg
+2019/10/24-11:04:36 [main] INFO  org.apache.catalina.core.StandardService- $msg
+2019/10/24-11:04:36 [main] INFO  org.apache.catalina.core.StandardEngine- $msg
+2019/10/24-11:04:36 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- $msg
+2019/10/24-11:04:36 [main] INFO  org.springframework.web.context.ContextLoader- $msg
+2019/10/24-11:04:36 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure- $msg
+2019/10/24-11:04:36 [main] INFO  com.alibaba.druid.pool.DruidDataSource- $msg
+2019/10/24-11:04:37 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping- $msg
+2019/10/24-11:04:37 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- $msg
+2019/10/24-11:04:37 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler- $msg
+2019/10/24-11:04:37 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper- $msg
+2019/10/24-11:04:37 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper- $msg
+2019/10/24-11:04:37 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner- $msg
+2019/10/24-11:04:37 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- $msg
+2019/10/24-11:04:37 [main] INFO  com.turing.qrcode.QrcodeApplication- $msg
+2019/10/24-11:06:07 [main] INFO  com.turing.qrcode.QrcodeApplication- Starting QrcodeApplication on DESKTOP-IHRFVL0 with PID 4908 (D:\Chrome\ChromeDownloads\VBlog-master\qcdode\target\classes started by Lenovo in D:\Chrome\ChromeDownloads\VBlog-master\qcdode)
+2019/10/24-11:06:07 [main] INFO  com.turing.qrcode.QrcodeApplication- No active profile set, falling back to default profiles: default
+2019/10/24-11:06:07 [background-preinit] WARN  org.springframework.http.converter.json.Jackson2ObjectMapperBuilder- For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2019/10/24-11:06:08 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5d22304d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/24-11:06:08 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8888 (http)
+2019/10/24-11:06:08 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/24-11:06:08 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019/10/24-11:06:08 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/24-11:06:08 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1352 ms
+2019/10/24-11:06:08 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure- Init DruidDataSource
+2019/10/24-11:06:08 [main] INFO  com.alibaba.druid.pool.DruidDataSource- {dataSource-1} inited
+2019/10/24-11:06:09 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping- Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019/10/24-11:06:09 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/24-11:06:09 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler- Initializing ExecutorService 'taskScheduler'
+2019/10/24-11:06:09 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper- Context refreshed
+2019/10/24-11:06:09 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper- Found 1 custom documentation plugin(s)
+2019/10/24-11:06:09 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner- Scanning for api listing references
+2019/10/24-11:06:09 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8888 (http) with context path ''
+2019/10/24-11:06:09 [main] INFO  com.turing.qrcode.QrcodeApplication- Started QrcodeApplication in 2.989 seconds (JVM running for 3.755)
+2019/10/24-11:12:21 [main] INFO  com.turing.qrcode.QrcodeApplication- Starting QrcodeApplication on DESKTOP-IHRFVL0 with PID 3144 (D:\Chrome\ChromeDownloads\VBlog-master\qcdode\target\classes started by Lenovo in D:\Chrome\ChromeDownloads\VBlog-master\qcdode)
+2019/10/24-11:12:21 [main] INFO  com.turing.qrcode.QrcodeApplication- No active profile set, falling back to default profiles: default
+2019/10/24-11:12:21 [background-preinit] WARN  org.springframework.http.converter.json.Jackson2ObjectMapperBuilder- For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2019/10/24-11:12:22 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d6b68b6f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/24-11:12:22 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat initialized with port(s): 8888 (http)
+2019/10/24-11:12:22 [main] INFO  org.apache.catalina.core.StandardService- Starting service [Tomcat]
+2019/10/24-11:12:22 [main] INFO  org.apache.catalina.core.StandardEngine- Starting Servlet engine: [Apache Tomcat/9.0.24]
+2019/10/24-11:12:22 [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring embedded WebApplicationContext
+2019/10/24-11:12:22 [main] INFO  org.springframework.web.context.ContextLoader- Root WebApplicationContext: initialization completed in 1449 ms
+2019/10/24-11:12:22 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure- Init DruidDataSource
+2019/10/24-11:12:23 [main] INFO  com.alibaba.druid.pool.DruidDataSource- {dataSource-1} inited
+2019/10/24-11:12:23 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping- Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019/10/24-11:12:23 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/24-11:12:23 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler- Initializing ExecutorService 'taskScheduler'
+2019/10/24-11:12:23 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper- Context refreshed
+2019/10/24-11:12:23 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper- Found 1 custom documentation plugin(s)
+2019/10/24-11:12:23 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner- Scanning for api listing references
+2019/10/24-11:12:24 [main] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer- Tomcat started on port(s): 8888 (http) with context path ''
+2019/10/24-11:12:24 [main] INFO  com.turing.qrcode.QrcodeApplication- Started QrcodeApplication in 3.185 seconds (JVM running for 4.026)
+2019/10/24-11:14:43 [http-nio-8888-exec-2] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/]- Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019/10/24-11:14:43 [http-nio-8888-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet- Initializing Servlet 'dispatcherServlet'
+2019/10/24-11:14:43 [http-nio-8888-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet- Completed initialization in 23 ms
+2019/10/24-11:14:59 [http-nio-8888-exec-3] WARN  org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver- Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required Integer parameter 'tableId' is not present]
+2019/10/24-11:15:42 [http-nio-8888-exec-9] INFO  com.turing.qrcode.controller.service.impl.StudentServiceImpl- 蒙家辉在1号桌子坐下
+2019/10/24-11:18:44 [main] INFO  com.turing.qrcode.QcdodeApplicationTests- Starting QcdodeApplicationTests on DESKTOP-IHRFVL0 with PID 15732 (started by Lenovo in D:\Chrome\ChromeDownloads\VBlog-master\qcdode)
+2019/10/24-11:18:44 [main] INFO  com.turing.qrcode.QcdodeApplicationTests- No active profile set, falling back to default profiles: default
+2019/10/24-11:18:44 [background-preinit] WARN  org.springframework.http.converter.json.Jackson2ObjectMapperBuilder- For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2019/10/24-11:18:46 [main] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker- Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8d12391d] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019/10/24-11:18:47 [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure- Init DruidDataSource
+2019/10/24-11:18:47 [main] INFO  com.alibaba.druid.pool.DruidDataSource- {dataSource-1} inited
+2019/10/24-11:18:48 [main] INFO  springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping- Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2019/10/24-11:18:49 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Initializing ExecutorService 'applicationTaskExecutor'
+2019/10/24-11:18:50 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler- Initializing ExecutorService 'taskScheduler'
+2019/10/24-11:18:50 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper- Context refreshed
+2019/10/24-11:18:50 [main] INFO  springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper- Found 1 custom documentation plugin(s)
+2019/10/24-11:18:50 [main] INFO  springfox.documentation.spring.web.scanners.ApiListingReferenceScanner- Scanning for api listing references
+2019/10/24-11:18:50 [main] INFO  com.turing.qrcode.QcdodeApplicationTests- Started QcdodeApplicationTests in 6.68 seconds (JVM running for 8.015)
+2019/10/24-11:18:51 [Thread-2] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler- Shutting down ExecutorService 'taskScheduler'
+2019/10/24-11:18:51 [Thread-2] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor- Shutting down ExecutorService 'applicationTaskExecutor'
+2019/10/24-11:18:51 [Thread-2] INFO  com.alibaba.druid.pool.DruidDataSource- {dataSource-1} closed
